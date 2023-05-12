@@ -32,11 +32,10 @@ For SD boot, Zynq pin U12-IO0_0 is connected to GND via R2584. For SD boot, pin 
 
 <h1> Create project using Vivado generated hardware description file (.xsa)</h1>
 
-Set environment variables for Petalinux paths. 
+Set environment variables for Petalinux paths. Make sure to set the Petalinux tools path correctly in this script, for your installation.
 
 ```
-$ cd <petaLinux_tool_install_dir>
-$ source ./settings.sh
+$ source ./petalinux_env.sh
 ```
 
 ```
