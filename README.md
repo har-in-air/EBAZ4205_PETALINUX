@@ -18,10 +18,13 @@
 
 <h1> EBAZ4205 hardware modifications <h1>
 
-1. Installed 25MHz crystal and 22pF caps for Ethernet PHY, R1485 not populated
-2. Installed 25MHz crystal oscillator and associated passive R,C, L components for PL clock, i.e. populated all components shown as NC on the Zynq 7010 N18 pin
-3. Installed SPDT switch for selecting SD card or Nand Flash boot. When SD boot is selected, if the SD card is not present, falls back to JTAG.
-4. Installed tactile push button switch 
+
+1. Installed microSD socket (came with the board, but not soldered)
+1. Installed 25MHz crystal Y3 and 22pF caps for Ethernet PHY. R1485 not populated.
+2. Installed 25MHz crystal oscillator X5 and associated passive R,C,L components for PL clock, connected to the Zynq 7010 pin N18.
+3. Installed SPDT switch for selecting boot via SD card or Nand Flash.
+For SD boot, Zynq pin U12-IO0_0 is connected to GND via R2584. For SD boot, pin U12-IO0_0U12-IO0_0 is connected to VCC via R2577. When SD boot is selected and the SD card is not detected on power-on, falls back to JTAG.
+4. Installed tactile push button switch S3 plus associated R, C components. 
 
 
 <h1> Create project using Vivado generated hardware description file (.xsa)</h1>
