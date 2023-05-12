@@ -4,7 +4,9 @@
 * Ubuntu 22.04LTS on amdx64 machine
 * [Xilinx Unified Installer 2022.2 SFD](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools.html)
    * Select Vitis - this will install Vitis and Vivado Design suite
-   * Run again and select Petalinux (install in the same directory) 
+   * Run again and select Petalinux (install in the same directory)
+   * Install updates 
+   * Download Petalinux sstate-cache and pre-mirror archives to avoid repetitive downloading from network during build process
    * [Install cable drivers](https://support.xilinx.com/s/article/66440?language=en_US)
 
 
