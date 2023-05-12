@@ -14,6 +14,7 @@
    
 * [Petalinux 101 - Getting Started Quickly - Youtube](https://www.youtube.com/watch?v=k03r2Ud42jY)
 * [Embedded Linux + FPGA/SoC (Zynq Part 5) - Phil's Lab - Youtube](https://www.youtube.com/watch?v=OfozFBfvWeY)
+* [Zynq + Vivado + Vitis tutorials - Youtube](https://www.youtube.com/watch?v=X4z1U8dJCTc&list=PLXHMvqUANAFOviU0J8HSp0E91lLJInzX1&index=2)
 * [EBAZ4205 petalinux, documentation links](https://github.com/KeitetsuWorks/EBAZ4205)
 * [Local sstate-cache and download mirrors](https://www.xilinx.com/content/dam/xilinx/support/download/plnx/sstate_rel_2022.2_README.txt)
 * https://support.xilinx.com/s/question/0D52E00006hpRM7SAM/cant-boot-petalinux-from-sd?language=en_US
@@ -22,15 +23,17 @@
 
 <h1> EBAZ4205 hardware modifications </h1>
 
+The board has a Zynq 7010 (CLG400 package), 256MByte DDR3 RAM, 128MByte Nand Flash, 100Mbps Ethernet. I made the following changes to my board :
 
-1. Installed microSD socket (came with the board, but not soldered)
+1. Installed microSD socket (shipped with the board).
 1. Installed 25MHz crystal Y3 and 22pF caps for Ethernet PHY. R1485 not populated.
-2. Installed 25MHz crystal oscillator X5 and associated passive R,C,L components for PL clock, connected to the Zynq 7010 pin N18.
+2. Installed 25MHz crystal oscillator X5 and associated passive R,C,L components for PL clock, connected to Zynq 7010 pin N18.
 3. Installed SPDT switch for selecting boot via SD card or Nand Flash.
-For SD boot, Zynq pin U12-IO0_0 is connected to GND via R2584. For SD boot, pin U12-IO0_0U12-IO0_0 is connected to VCC via R2577. When SD boot is selected and the SD card is not detected on power-on, falls back to JTAG.
-4. Installed tactile push button switch S3 plus associated R, C components. 
-5. Installed diode SS810 (D24) to supply power from the ATX connector. The board documentation suggests 12V, but that was originally required for the cooling fans in the original application (bitmining). I use a standard 5V 2A adapter to supply power.
+For SD boot, Zynq pin U12-IO0_0 is connected to GND via R2584. For SD boot, pin U12-IO0_0 is connected to VCC via R2577. When SD boot is selected and the SD card is not detected on power-on, falls back to JTAG.
+4. Installed push button switch S3 plus associated R, C components. 
+5. Installed diode SS810 (D24) to supply power from the ATX connector. The board documentation shows 12V, but that was required for cooling fans in the original bit-mining application. I use a standard 5V 2A adapter to supply power.
 
+<h1> Create hardware platform using Vivado </h1>
 
 <h1> Create project using Vivado generated hardware description file (.xsa)</h1>
 
@@ -127,19 +130,23 @@ $ petalinux-build
 
 <h1> JTAG download and boot using initrd RAM </h1>
 
-**First verify JTAG connection to target**
+**Verify JTAG adapter connection to Zynq**
 
-I am using a  Xilinx Platform Cable USB II  JTAG adapter (DLC10).
+1. Open Vivado hardware project
+2. Open Hardware Manager
+3. Open target. This should detect the JTAG adapter. I use a Xilinx Platform Cable USB II DLC10.
+4. Connect and verify that you can see the Zynq target. 
+5. Disconnect.
 
-Open Vivado project, open Hardware Manager, open target, connect and verify
-that you can see the Zynq target. Then disconnect.
-
+**JTAG boot**
 
 ```
 $ petalinux-boot --jtag --kernel
 ```
 
-This will download to and boot from DDR memory
+This will download the bitstream, first-stage bootloader, device tree, u-boot, kernel image and root file system to DDR memory, and then start the boot process.
+
+I use minicom terminal @ 115200baud to monitor the download and boot process. 
 
 ```
 system.bit
@@ -149,9 +156,12 @@ u-boot.elf
 uImage at 0x00200000
 rootfs.cpio.gz.u-boot at 0x04000000
 boot.scr at 0x03000000
+
+...
 ```
 
-after booting, 
+After several minutes, you should finally see the login prompt. The user is
+`petalinux` 
 
 ```
 login : petalinux
