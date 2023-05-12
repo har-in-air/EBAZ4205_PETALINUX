@@ -1,0 +1,362 @@
+Welcome to minicom 2.8                                                    
+                                                                          
+OPTIONS: I18n                                                             
+Port /dev/ttyUSB0, 19:55:46                                               
+                                                                          
+Press CTRL-A Z for help on special keys                                   
+                                                                          
+                                                                          
+                                                                          
+U-Boot 2022.01 (Sep 20 2022 - 06:35:33 +0000)                             
+                                                                          
+CPU:   Zynq 7z010                                                         
+Silicon: v3.1                                                             
+DRAM:  ECC disabled 256 MiB                                               
+Flash: 0 Bytes                                                            
+NAND:  0 MiB                                                              
+MMC:   mmc@e0100000: 0                                                    
+Loading Environment from FAT... sdhci_set_clock: Timeout to wait cmd & data inht
+sdhci_set_clock: Timeout to wait cmd & data inhibit                       
+sdhci_set_clock: Timeout to wait cmd & data inhibit
+sdhci_send_command: MMC: 0 busy timeout increasing to: 200 ms.
+sdhci_send_command: MMC: 0 busy timeout increasing to: 400 ms.
+sdhci_send_command: MMC: 0 busy timeout increasing to: 800 ms.                  
+sdhci_send_command: MMC: 0 busy timeout increasing to: 1600 ms.                 
+sdhci_send_command: MMC: 0 busy timeout increasing to: 3200 ms.                 
+sdhci_send_command: MMC: 0 busy timeout.                                        
+In:    serial@e0001000                                                          
+Out:   serial@e0001000                                                          
+Err:   serial@e0001000                                                          
+Net:   FEC: can't find phy-handle                                               
+                                                                                
+ZYNQ GEM: e000b000, mdio bus e000b000, phyaddr 0, interface gmii                
+eth0: ethernet@e000b000                                                         
+Hit any key to stop autoboot:  0                                                
+sdhci_set_clock: Timeout to wait cmd & data inhibit                             
+sdhci_set_clock: Timeout to wait cmd & data inhibit                             
+sdhci_set_clock: Timeout to wait cmd & data inhibit                             
+sdhci_send_command: MMC: 0 busy timeout.                                        
+JTAG: Trying to boot script at 3000000                                          
+## Executing script at 03000000                                                 
+Trying to load boot images from mmc0                                            
+Couldn't find partition 0: 0x02080000                                           
+Can't set block device                                                          
+Importing environment(uEnv.txt) from mmc0...                                    
+## Warning: Input data exceeds 1048576 bytes - truncated                        
+## Info: input data size = 1048578 = 0x100002                                   
+## Error: Environment import failed: errno = 22                                 
+Couldn't find partition 0: 0x10000000                                           
+Can't set block device                                                          
+Wrong Image Format for bootm command                                            
+ERROR: can't get kernel image!                                                  
+Couldn't find partition 0: 0x00200000                                           
+Can't set block device                                                          
+Couldn't find partition 0: 0x00100000                                           
+Can't set block device                                                          
+Couldn't find partition 0: 0x04000000                                           
+Can't set block device                                                          
+## Booting kernel from Legacy Image at 00200000 ...                             
+   Image Name:   Linux-5.15.36-xilinx-v2022.2                                   
+   Image Type:   ARM Linux Kernel Image (uncompressed)                          
+   Data Size:    4539792 Bytes = 4.3 MiB                                        
+   Load Address: 00200000                                                       
+   Entry Point:  00200000                                                       
+   Verifying Checksum ... OK                                                    
+## Loading init Ramdisk from Legacy Image at 04000000 ...                       
+   Image Name:   petalinux-image-minimal-zynq-gen                               
+   Image Type:   ARM Linux RAMDisk Image (uncompressed)                         
+   Data Size:    12281009 Bytes = 11.7 MiB                                      
+   Load Address: 00000000                                                       
+   Entry Point:  00000000                                                       
+   Verifying Checksum ... OK                                                    
+## Flattened Device Tree blob at 00100000                                       
+   Booting using the fdt blob at 0x100000                                       
+   Loading Kernel Image                                                         
+   Loading Ramdisk to 0df25000, end 0eadb4b1 ... OK                             
+   Loading Device Tree to 0df1d000, end 0df247a4 ... OK                         
+                                                                                
+Starting kernel ...                                                             
+                                                                                
+Booting Linux on physical CPU 0x0                                               
+Linux version 5.15.36-xilinx-v2022.2 (oe-user@oe-host) (arm-xilinx-linux-gnueab2
+CPU: ARMv7 Processor [413fc090] revision 0 (ARMv7), cr=18c5387d                 
+CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache        
+OF: fdt: Machine model: xlnx,zynq-7000                                          
+earlycon: cdns0 at MMIO 0xe0001000 (options '115200n8')                         
+printk: bootconsole [cdns0] enabled                                             
+Memory policy: Data cache writealloc                                            
+cma: Reserved 16 MiB at 0x0f000000                                              
+Zone ranges:                                                                    
+  Normal   [mem 0x0000000000000000-0x000000000fffffff]                          
+  HighMem  empty                                                                
+Movable zone start for each node                                                
+Early memory node ranges                                                        
+  node   0: [mem 0x0000000000000000-0x000000000fffffff]                         
+Initmem setup node 0 [mem 0x0000000000000000-0x000000000fffffff]                
+percpu: Embedded 12 pages/cpu s16588 r8192 d24372 u49152                        
+Built 1 zonelists, mobility grouping on.  Total pages: 65024                    
+Kernel command line: console=ttyPS0,115200 earlycon root=/dev/ram0 rw           
+Dentry cache hash table entries: 32768 (order: 5, 131072 bytes, linear)         
+Inode-cache hash table entries: 16384 (order: 4, 65536 bytes, linear)           
+mem auto-init: stack:off, heap alloc:off, heap free:off                         
+Memory: 219160K/262144K available (7168K kernel code, 244K rwdata, 1896K rodata)
+rcu: Preemptible hierarchical RCU implementation.                               
+rcu:    RCU event tracing is enabled.                                           
+rcu:    RCU restricting CPUs from NR_CPUS=4 to nr_cpu_ids=2.                    
+        Trampoline variant of Tasks RCU enabled.                                
+rcu: RCU calculated value of scheduler-enlistment delay is 10 jiffies.          
+rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=2                    
+NR_IRQS: 16, nr_irqs: 16, preallocated irqs: 16                                 
+efuse mapped to (ptrval)                                                        
+slcr mapped to (ptrval)                                                         
+GIC physical location is 0xf8f01000                                             
+L2C: platform modifies aux control register: 0x72360000 -> 0x72760000           
+L2C: DT/platform modifies aux control register: 0x72360000 -> 0x72760000        
+L2C-310 erratum 769419 enabled                                                  
+L2C-310 enabling early BRESP for Cortex-A9                                      
+L2C-310 full line of zeros enabled for Cortex-A9                                
+L2C-310 ID prefetch enabled, offset 1 lines                                     
+L2C-310 dynamic clock gating enabled, standby mode enabled                      
+L2C-310 cache controller enabled, 8 ways, 512 kB                                
+L2C-310: CACHE_ID 0x410000c8, AUX_CTRL 0x76760001                               
+random: get_random_bytes called from start_kernel+0x364/0x5d8 with crng_init=0  
+zynq_clock_init: clkc starts at (ptrval)                                        
+Zynq clock init                                                                 
+sched_clock: 64 bits at 166MHz, resolution 6ns, wraps every 4398046511103ns     
+clocksource: arm_global_timer: mask: 0xffffffffffffffff max_cycles: 0x26703d7dds
+Switching to timer-based delay loop, resolution 6ns                             
+Console: colour dummy device 80x30                                              
+Calibrating delay loop (skipped), value calculated using timer frequency.. 333.)
+pid_max: default: 32768 minimum: 301                                            
+Mount-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)             
+Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)        
+CPU: Testing write buffer coherency: ok                                         
+CPU0: Spectre v2: using BPIALL workaround                                       
+CPU0: thread -1, cpu 0, socket 0, mpidr 80000000                                
+Setting up static identity map for 0x100000 - 0x100060                          
+rcu: Hierarchical SRCU implementation.                                          
+smp: Bringing up secondary CPUs ...                                             
+CPU1: thread -1, cpu 1, socket 0, mpidr 80000001                                
+CPU1: Spectre v2: using BPIALL workaround                                       
+smp: Brought up 1 node, 2 CPUs                                                  
+SMP: Total of 2 processors activated (666.66 BogoMIPS).                         
+CPU: All CPU(s) started in SVC mode.                                            
+devtmpfs: initialized                                                           
+VFP support v0.3: implementor 41 architecture 3 part 30 variant 9 rev 4         
+clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 191s
+futex hash table entries: 512 (order: 3, 32768 bytes, linear)                   
+pinctrl core: initialized pinctrl subsystem                                     
+NET: Registered PF_NETLINK/PF_ROUTE protocol family                             
+DMA: preallocated 256 KiB pool for atomic coherent allocations                  
+thermal_sys: Registered thermal governor 'step_wise'                            
+cpuidle: using governor menu                                                    
+amba f8801000.etb: Fixing up cyclic dependency with replicator                  
+amba f8803000.tpiu: Fixing up cyclic dependency with replicator                 
+amba f8804000.funnel: Fixing up cyclic dependency with replicator               
+amba f889c000.ptm: Fixing up cyclic dependency with f8804000.funnel             
+amba f889d000.ptm: Fixing up cyclic dependency with f8804000.funnel             
+hw-breakpoint: found 5 (+1 reserved) breakpoint and 1 watchpoint registers.     
+hw-breakpoint: maximum watchpoint size is 4 bytes.                              
+e0001000.serial: ttyPS0 at MMIO 0xe0001000 (irq = 31, base_baud = 6249999) is as
+printk: console [ttyPS0] enabled                                                
+printk: console [ttyPS0] enabled                                                
+printk: bootconsole [cdns0] disabled                                            
+printk: bootconsole [cdns0] disabled                                            
+vgaarb: loaded                                                                  
+SCSI subsystem initialized                                                      
+usbcore: registered new interface driver usbfs                                  
+usbcore: registered new interface driver hub                                    
+usbcore: registered new device driver usb                                       
+mc: Linux media interface: v0.10                                                
+videodev: Linux video capture interface: v2.00                                  
+pps_core: LinuxPPS API ver. 1 registered                                        
+pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@>
+PTP clock support registered                                                    
+EDAC MC: Ver: 3.0.0                                                             
+FPGA manager framework                                                          
+Advanced Linux Sound Architecture Driver Initialized.                           
+clocksource: Switched to clocksource arm_global_timer                           
+NET: Registered PF_INET protocol family                                         
+IP idents hash table entries: 4096 (order: 3, 32768 bytes, linear)              
+tcp_listen_portaddr_hash hash table entries: 512 (order: 0, 6144 bytes, linear) 
+TCP established hash table entries: 2048 (order: 1, 8192 bytes, linear)         
+TCP bind hash table entries: 2048 (order: 2, 16384 bytes, linear)               
+TCP: Hash tables configured (established 2048 bind 2048)                        
+UDP hash table entries: 256 (order: 1, 8192 bytes, linear)                      
+UDP-Lite hash table entries: 256 (order: 1, 8192 bytes, linear)                 
+NET: Registered PF_UNIX/PF_LOCAL protocol family                                
+RPC: Registered named UNIX socket transport module.                             
+RPC: Registered udp transport module.                                           
+RPC: Registered tcp transport module.                                           
+RPC: Registered tcp NFSv4.1 backchannel transport module.                       
+PCI: CLS 0 bytes, default 64                                                    
+armv7-pmu f8891000.pmu: hw perfevents: no interrupt-affinity property, guessing.
+Trying to unpack rootfs image as initramfs...                                   
+hw perfevents: enabled with armv7_cortex_a9 PMU driver, 7 counters available    
+workingset: timestamp_bits=30 max_order=16 bucket_order=0                       
+jffs2: version 2.2. (NAND) (SUMMARY)  © 2001-2006 Red Hat, Inc.                 
+io scheduler mq-deadline registered                                             
+io scheduler kyber registered                                                   
+zynq-pinctrl 700.pinctrl: zynq pinctrl initialized                              
+dma-pl330 f8003000.dmac: Loaded driver for PL330 DMAC-241330                    
+dma-pl330 f8003000.dmac:        DBUFF-128x8bytes Num_Chans-8 Num_Peri-4 Num_Eve6
+brd: module loaded                                                              
+loop: module loaded                                                             
+CAN device driver interface                                                     
+Freeing initrd memory: 11996K                                                   
+macb e000b000.ethernet eth0: Cadence GEM rev 0x00020118 at 0xe000b000 irq 32 (0)
+e1000e: Intel(R) PRO/1000 Network Driver                                        
+e1000e: Copyright(c) 1999 - 2015 Intel Corporation.                             
+ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver                      
+ehci-pci: EHCI PCI platform driver                                              
+usbcore: registered new interface driver usb-storage                            
+i2c_dev: i2c /dev entries driver                                                
+cdns-wdt f8005000.watchdog: Xilinx Watchdog Timer with timeout 10s              
+EDAC MC: ECC not enabled                                                        
+Xilinx Zynq CpuIdle Driver started                                              
+sdhci: Secure Digital Host Controller Interface driver                          
+sdhci: Copyright(c) Pierre Ossman                                               
+sdhci-pltfm: SDHCI platform and OF driver helper                                
+ledtrig-cpu: registered to indicate activity on CPUs                            
+clocksource: ttc_clocksource: mask: 0xffff max_cycles: 0xffff, max_idle_ns: 537s
+timer #0 at (ptrval), irq=45                                                    
+usbcore: registered new interface driver usbhid                                 
+usbhid: USB HID core driver                                                     
+fpga_manager fpga0: Xilinx Zynq FPGA Manager registered                         
+mmc0: SDHCI controller on e0100000.mmc [e0100000.mmc] using ADMA                
+NET: Registered PF_INET6 protocol family                                        
+Segment Routing with IPv6                                                       
+In-situ OAM (IOAM) with IPv6                                                    
+sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver                             
+NET: Registered PF_PACKET protocol family                                       
+can: controller area network core                                               
+NET: Registered PF_CAN protocol family                                          
+can: raw protocol                                                               
+can: broadcast manager protocol                                                 
+can: netlink gateway - max_hops=1                                               
+Registering SWP/SWPB emulation handler                                          
+of-fpga-region fpga-full: FPGA Region probed                                    
+of_cfs_init                                                                     
+of_cfs_init: OK                                                                 
+ALSA device list:                                                               
+  No soundcards found.                                                          
+Freeing unused kernel image (initmem) memory: 1024K                             
+Run /init as init process                                                       
+INIT: version 2.99 booting                                                      
+Starting udev                                                                   
+Starting version 249.7+                                                         
+bootlogd: /dev/ttyPS0hwclock: can't open '/dev/misc/rtc': No such file or direcy
+Fri Mar  9 12:34:56 UTC 2018                                                    
+hwclock: can't open '/dev/misc/rtc': No such file or directory                  
+random: dd: uninitialized urandom read (512 bytes read)                         
+Configuring packages on first boot....                                          
+ (This may take several minutes. Please do not power off the machine.)          
+Running postinst /etc/rpm-postinsts/100-sysvinit-inittab...                     
+update-rc.d: /etc/init.d/run-postinsts exists during rc.d purge (continuing)    
+ Removing any system startup links for run-postinsts ...                        
+  /etc/rcS.d/S99run-postinsts                                                   
+INIT: Entering runlevel: 5                                                      
+Configuring network interfaces... macb e000b000.ethernet eth0: PHY [e000b000.et)
+macb e000b000.ethernet eth0: configuring for phy/gmii link mode                 
+udhcpc: started, v1.34.1                                                        
+udhcpc: broadcasting discover                                                   
+macb e000b000.ethernet eth0: unable to generate target frequency: 25000000 Hz   
+macb e000b000.ethernet eth0: Link is Up - 100Mbps/Full - flow control off       
+IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready                         
+udhcpc: broadcasting discover                                                   
+udhcpc: broadcasting select for 192.168.1.2, server 192.168.1.1                 
+udhcpc: lease of 192.168.1.2 obtained from 192.168.1.1, lease time 86400        
+/etc/udhcpc.d/50default: Adding DNS 192.168.1.1                                 
+done.                                                                           
+Starting haveged: haveged: command socket is listening at fd 3                  
+haveged: haveged starting up                                                    
+[  OK  ]                                                                        
+Starting Dropbear SSH server: Waiting for kernel randomness to be initialised...
+haveged: haveged: ver: 1.9.14; arch: generic; vend: ; build: (gcc 11.2.0 CTV); K
+                                                                                
+haveged: haveged: cpu: (VC); data: 16K (D); inst: 16K (D); idx: 12/40; sz: 15126
+                                                                                
+haveged: haveged: tot tests(BA8): A:1/1 B:1/1 continuous tests(B):  last entrop5
+                                                                                
+haveged: haveged: fills: 0, generated: 0                                        
+                                                                                
+random: crng init done                                                          
+Generating 2048 bit rsa key, this may take a while...                           
+Public key portion is:                                                          
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCUH6c5zFFwTDFc1DDKUMYW7nXvSus4NwdgeQknct+m
+Fingerprint: sha1!! 47:c5:48:7a:5c:86:45:1e:f1:92:02:c8:97:e5:a9:86:03:80:b7:b8 
+dropbear.                                                                       
+Starting rpcbind daemon...done.                                                 
+starting statd: done                                                            
+hwclock: can't open '/dev/misc/rtc': No such file or directory                  
+Starting internet superserver: inetd.                                           
+NFS daemon support not enabled in kernel                                        
+Starting syslogd/klogd: done                                                    
+Starting tcf-agent: OK                                                          
+                                                                                
+PetaLinux 2022.2_release_S10071807 petalinux_ram /dev/ttyPS0                    
+                                                                                
+petalinux_ram login: petalinux                                                  
+You are required to change your password immediately (administrator enforced).  
+New password:                                                                   
+Retype new password:                                                            
+petalinux_ram:~$ ping google.com                                                
+PING google.com (142.250.183.46): 56 data bytes                                 
+64 bytes from 142.250.183.46: seq=0 ttl=119 time=26.940 ms                      
+64 bytes from 142.250.183.46: seq=1 ttl=119 time=26.769 ms                      
+64 bytes from 142.250.183.46: seq=2 ttl=119 time=27.704 ms                      
+^C                                                                              
+--- google.com ping statistics ---                                              
+3 packets transmitted, 3 packets received, 0% packet loss                       
+round-trip min/avg/max = 26.769/27.137/27.704 ms                                
+petalinux_ram:~$ ifconfig                                                       
+eth0      Link encap:Ethernet  HWaddr 00:0A:35:00:1E:53                         
+          inet addr:192.168.1.2  Bcast:192.168.1.255  Mask:255.255.255.0        
+          inet6 addr: fe80::20a:35ff:fe00:1e53/64 Scope:Link                    
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1                    
+          RX packets:24 errors:0 dropped:12 overruns:0 frame:0                  
+          TX packets:20 errors:0 dropped:0 overruns:0 carrier:0                 
+          collisions:0 txqueuelen:1000                                          
+          RX bytes:2780 (2.7 KiB)  TX bytes:2835 (2.7 KiB)                      
+          Interrupt:32 Base address:0xb000                                      
+                                                                                
+lo        Link encap:Local Loopback                                             
+          inet addr:127.0.0.1  Mask:255.0.0.0                                   
+          inet6 addr: ::1/128 Scope:Host                                        
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1                              
+          RX packets:2 errors:0 dropped:0 overruns:0 frame:0                    
+          TX packets:2 errors:0 dropped:0 overruns:0 carrier:0                  
+          collisions:0 txqueuelen:1000                                          
+          RX bytes:140 (140.0 B)  TX bytes:140 (140.0 B)                        
+                                                                                
+petalinux_ram:~$ shutdown now                                                   
+-sh: /sbin/shutdown: Permission denied                                          
+petalinux_ram:~$ sudo shutdown now                                              
+                                                                                
+We trust you have received the usual lecture from the local System              
+Administrator. It usually boils down to these three things:                     
+                                                                                
+    #1) Respect the privacy of others.                                          
+    #2) Think before you type.                                                  
+    #3) With great power comes great responsibility.                            
+                                                                                
+Password:                                                                       
+                                                                                
+Broadcast message from root@petalinux_ramgoing down to maintenance mode NOW!    
+INIT: Switching to runlevpetalinux_ram:~$ Stopping haveged: [  OK  ]            
+Stopping Dropbear SSH server: stopped /usr/sbin/dropbear (pid 419)              
+dropbear.                                                                       
+hwclock: can't open '/dev/misc/rtc': No such file or directory                  
+Stopping internet superserver: inetd.                                           
+stopping mountd: done                                                           
+stopping nfsd: done                                                             
+Stopping syslogd/klogd: stopped syslogd (pid 441)                               
+stopped klogd (pid 444)                                                         
+done                                                                            
+Stopping tcf-agent: OK                                                          
+stopping statd: done                                                            
+Stopping rpcbind daemon...                                                      
+done.                                                                           
+Deconfiguring network interfaces... macb e000b000.ethernet eth0: Link is Down   
+done.                                                                           
+Unmounting remote filesystems...   
