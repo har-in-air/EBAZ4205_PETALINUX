@@ -1,4 +1,4 @@
-<h1> Petalinux 2022.2 for EBAZ4205 board with Zynq 7010 <h1>
+<h1> Petalinux 2022.2 for EBAZ4205 board with Zynq 7010 </h1>
 
 **Environment** 
 * Ubuntu 22.04LTS on amdx64 machine
@@ -15,8 +15,9 @@
 * https://support.xilinx.com/s/question/0D52E00006hpRM7SAM/cant-boot-petalinux-from-sd?language=en_US
 * https://www.xilinx.com/content/dam/xilinx/support/download/plnx/sstate_rel_2022.2_README.txt
 * https://support.xilinx.com/s/question/0D52E00006hpPmhSAE/petalinux-20192-rootfs-in-sd?language=en_US
+* 
 
-<h1> EBAZ4205 hardware modifications <h1>
+<h1> EBAZ4205 hardware modifications </h1>
 
 
 1. Installed microSD socket (came with the board, but not soldered)
