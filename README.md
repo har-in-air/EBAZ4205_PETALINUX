@@ -19,6 +19,7 @@
 * [Petalinux 101 - Getting Started Quickly - Youtube](https://www.youtube.com/watch?v=k03r2Ud42jY)
 * [Embedded Linux + FPGA/SoC (Zynq Part 5) - Phil's Lab - Youtube](https://www.youtube.com/watch?v=OfozFBfvWeY)
 * [Zynq + Vivado + Vitis tutorials - Youtube](https://www.youtube.com/watch?v=X4z1U8dJCTc&list=PLXHMvqUANAFOviU0J8HSp0E91lLJInzX1&index=2)
+* [EBAZ4205 Reference Design](https://github.com/nightseas/ebit_z7010)
 * [EBAZ4205 petalinux, documentation links](https://github.com/KeitetsuWorks/EBAZ4205)
 * [Local sstate-cache and download mirrors](https://www.xilinx.com/content/dam/xilinx/support/download/plnx/sstate_rel_2022.2_README.txt)
 * https://support.xilinx.com/s/question/0D52E00006hpRM7SAM/cant-boot-petalinux-from-sd?language=en_US
