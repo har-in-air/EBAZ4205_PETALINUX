@@ -10,10 +10,10 @@
 
 **Credits**
    
-* https://www.youtube.com/watch?v=k03r2Ud42jY
-* https://www.youtube.com/watch?v=OfozFBfvWeY
+* [Petalinux 101 - Getting Started Quickly - Youtube](https://www.youtube.com/watch?v=k03r2Ud42jY)
+* [Embedded Linux + FPGA/SoC (Zynq Part 5) - Phil's Lab - Youtube](https://www.youtube.com/watch?v=OfozFBfvWeY)
+* [Local sstate-cache and download mirrors](https://www.xilinx.com/content/dam/xilinx/support/download/plnx/sstate_rel_2022.2_README.txt)
 * https://support.xilinx.com/s/question/0D52E00006hpRM7SAM/cant-boot-petalinux-from-sd?language=en_US
-* https://www.xilinx.com/content/dam/xilinx/support/download/plnx/sstate_rel_2022.2_README.txt
 * https://support.xilinx.com/s/question/0D52E00006hpPmhSAE/petalinux-20192-rootfs-in-sd?language=en_US
 * 
 
@@ -26,6 +26,7 @@
 3. Installed SPDT switch for selecting boot via SD card or Nand Flash.
 For SD boot, Zynq pin U12-IO0_0 is connected to GND via R2584. For SD boot, pin U12-IO0_0U12-IO0_0 is connected to VCC via R2577. When SD boot is selected and the SD card is not detected on power-on, falls back to JTAG.
 4. Installed tactile push button switch S3 plus associated R, C components. 
+5. Installed diode SS810 (D24) to supply power from the ATX connector. The board documentation suggests 12V, but that was originally required for the cooling fans in the original application (bitmining). I use a standard 5V 2A adapter to supply power.
 
 
 <h1> Create project using Vivado generated hardware description file (.xsa)</h1>
@@ -189,8 +190,9 @@ INFO: Generating zynq binary package BOOT.BIN...
 INFO: Binary is ready.
 ```
 
+The warning about overlap can be ignored, both files are being copied to the same memory partition, but are not actually overlapping in destination memory address ranges.
 
-Check layout of BOOT.BIN
+**Check layout of BOOT.BIN**
 
 ```
 $ bootgen -arch zynq -read BOOT.BIN
