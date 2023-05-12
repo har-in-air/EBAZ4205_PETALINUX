@@ -1,5 +1,9 @@
 <h1> Petalinux 2022.2 for EBAZ4205 board with Zynq 7010 </h1>
 
+<p align="center">
+<img src="docs/board.jpg" >
+<p>
+
 **Environment** 
 * Ubuntu 22.04LTS on amdx64 machine
 * [Xilinx Unified Installer 2022.2 SFD](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools.html)
