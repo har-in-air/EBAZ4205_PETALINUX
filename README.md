@@ -207,102 +207,10 @@ INFO: Binary is ready.
 
 The warning about overlap can be ignored, both files are being copied to the same memory partition, but are not actually overlapping in destination memory address ranges.
 
-**Check layout of BOOT.BIN**
+You can verify the layout of `BOOT.BIN` using the command
 
 ```
 $ bootgen -arch zynq -read BOOT.BIN
-```
-
-
-```
-****** Xilinx Bootgen v2022.2
-  **** Build date : Feb  7 2023-10:06:59
-    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-
---------------------------------------------------------------------------------
-   BOOT HEADER
---------------------------------------------------------------------------------
-        boot_vectors (0x00) : 0xeafffffeeafffffeeafffffeeafffffeeafffffeeafffffeeafffffeeafffffe
-     width_detection (0x20) : 0xaa995566
-            image_id (0x24) : 0x584c4e58
- encryption_keystore (0x28) : 0x00000000
-      header_version (0x2c) : 0x01010000
-   fsbl_sourceoffset (0x30) : 0x00001700
-         fsbl_length (0x34) : 0x00014008
-   fsbl_load_address (0x38) : 0x00000000
-   fsbl_exec_address (0x3C) : 0x00000000
-   fsbl_total_length (0x40) : 0x00014008
-    qspi_config-word (0x44) : 0x00000001
-            checksum (0x48) : 0xfc16c530
-          iht_offset (0x98) : 0x000008c0
-          pht_offset (0x9c) : 0x00000c80
---------------------------------------------------------------------------------
-   IMAGE HEADER TABLE
---------------------------------------------------------------------------------
-             version (0x00) : 0x01020000        total_images (0x04) : 0x00000003
-          pht_offset (0x08) : 0x00000c80           ih_offset (0x0c) : 0x00000900
-       hdr_ac_offset (0x10) : 0x00000000
---------------------------------------------------------------------------------
-   IMAGE HEADER (zynq_fsbl.elf)
---------------------------------------------------------------------------------
-          next_ih(W) (0x00) : 0x00000250
-         next_pht(W) (0x04) : 0x00000320
-    total_partitions (0x0c) : 0x00000001
-                name (0x10) : zynq_fsbl.elf
---------------------------------------------------------------------------------
-   IMAGE HEADER (u-boot.elf)
---------------------------------------------------------------------------------
-          next_ih(W) (0x00) : 0x00000260
-         next_pht(W) (0x04) : 0x00000330
-    total_partitions (0x0c) : 0x00000001
-                name (0x10) : u-boot.elf
---------------------------------------------------------------------------------
-   IMAGE HEADER (system.dtb)
---------------------------------------------------------------------------------
-          next_ih(W) (0x00) : 0x00000000
-         next_pht(W) (0x04) : 0x00000340
-    total_partitions (0x0c) : 0x00000001
-                name (0x10) : system.dtb
---------------------------------------------------------------------------------
-   PARTITION HEADER TABLE (zynq_fsbl.elf.0)
---------------------------------------------------------------------------------
-    encrypted_length (0x00) : 0x00005002  unencrypted_length (0x04) : 0x00005002
-        total_length (0x08) : 0x00005002           load_addr (0x0c) : 0x00000000
-           exec_addr (0x10) : 0x00000000    partition_offset (0x14) : 0x000005c0
-          attributes (0x18) : 0x00000010       section_count (0x1C) : 0x00000001
-     checksum_offset (0x20) : 0x00000000          iht_offset (0x24) : 0x00000240
-           ac_offset (0x28) : 0x00000000            checksum (0x3c) : 0xffff07e8
- attribute list -
-               trustzone [non-secure]            el [el-0]         
-              exec_state [aarch-32]     dest_device [none]         
-              encryption [no]                  core [none]         
---------------------------------------------------------------------------------
-   PARTITION HEADER TABLE (u-boot.elf.0)
---------------------------------------------------------------------------------
-    encrypted_length (0x00) : 0x0003b002  unencrypted_length (0x04) : 0x0003b002
-        total_length (0x08) : 0x0003b002           load_addr (0x0c) : 0x04000000
-           exec_addr (0x10) : 0x04000000    partition_offset (0x14) : 0x000055d0
-          attributes (0x18) : 0x00000010       section_count (0x1C) : 0x00000001
-     checksum_offset (0x20) : 0x00000000          iht_offset (0x24) : 0x00000250
-           ac_offset (0x28) : 0x00000000            checksum (0x3c) : 0xf7f497c8
- attribute list -
-               trustzone [non-secure]            el [el-0]         
-              exec_state [aarch-32]     dest_device [none]         
-              encryption [no]                  core [none]         
---------------------------------------------------------------------------------
-   PARTITION HEADER TABLE (system.dtb.0)
---------------------------------------------------------------------------------
-    encrypted_length (0x00) : 0x000011ed  unencrypted_length (0x04) : 0x000011ed
-        total_length (0x08) : 0x000011ed           load_addr (0x0c) : 0x00100000
-           exec_addr (0x10) : 0x00000000    partition_offset (0x14) : 0x000405e0
-          attributes (0x18) : 0x00000013       section_count (0x1C) : 0x00000001
-     checksum_offset (0x20) : 0x00000000          iht_offset (0x24) : 0x00000260
-           ac_offset (0x28) : 0x00000000            checksum (0x3c) : 0xffebc1e4
- attribute list -
-               trustzone                         el [el-0]         
-              exec_state [aarch-32]     dest_device [none]         
-              encryption [no]                  core [none]         
---------------------------------------------------------------------------------
 ```
 
 
