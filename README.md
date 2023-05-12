@@ -39,7 +39,6 @@ $ source ./petalinux_env.sh
 ```
 
 ```
-$ cd <petalinux_workspace_dir>
 $ petalinux-create --type project --template zynq --name petalinux_sd
 
 $ cd petalinux_sd
@@ -56,10 +55,10 @@ In the pop-up menuconfig dialog :
 * Check hardware components (DDR, Enet, UART, SDIO) are present
 
 * Image Packaging Configuration
- 	* For SD boot : change Root filesystem type from `RAM initrd` to `ext4 (sd/eMMC/SATA/USB)` 
- 	* Disable Copy final images to tftpboot
+ 	* For SD boot, change Root filesystem type from `RAM initrd` to `ext4 (sd/eMMC/SATA/USB)` 
+ 	* Disable `Copy final images to tftpboot`
  
-* Yocto settings to use pre-downloaded archives during the build process instead of downloading from network
+* Yocto settings :    Use pre-downloaded archives during the build process instead of downloading from network
    * change sstate archive from network site `http://xxx` to local directory `file:///home/nair/installs/fpga/pl_sstate/arm/`
  		
    * change pre-mirror url from network site `http://xxx` to local directory `file:///home/nair/installs/fpga/pl_downloads/downloads/`
