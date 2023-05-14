@@ -279,7 +279,7 @@ Mount the partition again
 *Method 2 : using rootfs.cpio build output*
 
 ```
-$ sudo cp images/linux/rootfs.cpio /media/nair/rootfs
+$ sudo cp rootfs.cpio /media/nair/rootfs
 $ cd /media/nair/rootfs
 $ sudo pax -rvf rootfs.cpio
 ```
