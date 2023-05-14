@@ -286,7 +286,7 @@ $ sudo pax -rvf rootfs.cpio
 
 *Method 3 : using rootfs.tar.gz build output*
 
-Ensure the root partition is mounted
+Ensure the root partition is mounted. In my case it is mounted at /media/nair/rootfs.
 
 ```
 $ sudo tar xvzf rootfs.tar.gz -C /media/nair/rootfs
