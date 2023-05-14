@@ -249,22 +249,27 @@ $ sudo mkfs.msdos -n BOOT /dev/sdb1
 $ sudo mkfs.ext4 -L rootfs /dev/sdb2
 ```
 
-*Mount the fat32 partition and copy the files*
+*Mount the fat32 partition (in my case it is mounted at /media/nair/BOOT) and copy the required boot files*
 
 ```
-$ cp BOOT.BIN boot.scr image.ub /media/nair/BOOT
+$ cp BOOT.BIN /media/nair/BOOT
+$ cp boot.scr /media/nair/BOOT
+$ cp image.ub /media/nair/BOOT 
 $ sync
 ```
 
 **Write root file system**
 
-*Method 1 : using rootfs.ext4 build output*
+*Method 1 : using build output rootfs.ext4*
 
 If the ext4 partition is mounted, unmount it before dd command
 
 ```
 $ sudo umount /dev/sdb2
 $ sudo dd if=rootfs.ext4 of=/dev/sdb2
+```
+Resize the ext4 partition to the full space available (~31GB).
+```
 $ sudo resize2fs /dev/sdb2
 $ sudo e2label /dev/sdb2 "rootfs"
 ```
@@ -274,7 +279,7 @@ Mount the partition again
 *Method 2 : using rootfs.cpio build output*
 
 ```
-$ cp images/linux/rootfs.cpio /media/nair/rootfs
+$ sudo cp images/linux/rootfs.cpio /media/nair/rootfs
 $ cd /media/nair/rootfs
 $ sudo pax -rvf rootfs.cpio
 ```
