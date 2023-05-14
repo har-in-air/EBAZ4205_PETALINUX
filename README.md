@@ -80,11 +80,12 @@ In the pop-up menuconfig dialog :
  	* Disable `Copy final images to tftpboot`
  
 * Yocto settings :    Use pre-downloaded archives during the build process instead of downloading from network
-   * change sstate archive from network site `http://xxx` to local directory `file:///home/nair/installs/fpga/pl_sstate/arm/`
+   * change sstate archive from network site `http://xxx` to local directory `file:///home/<path to downloaded archive>/arm/`
  		
-   * change pre-mirror url from network site `http://xxx` to local directory `file:///home/nair/installs/fpga/pl_downloads/downloads/`
+   * change pre-mirror url from network site `http://xxx` to local directory `file:///home/<path to downloaded archive>/downloads/`
 		
-
+   * Disable Network downloads
+   
 	* For SD boot : Use EXT4 rootfs during boot
 
 	*Method A: PetaLinux config*
