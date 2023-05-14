@@ -40,6 +40,17 @@ For SD boot, Zynq pin U12-IO0_0 is connected to GND via R2584. For SD boot, pin 
 
 <h1> Create hardware platform using Vivado </h1>
 
+Regenerate the Vivado 2022.2 project using the tcl script provided in the folder `/hw`.
+
+Start Vivado, then in the TCL console at the bottom, navigate to the directory
+containing the script 
+```
+cd <full path to script directory>
+source ./ebit_7010_proj_gen.tcl
+```
+
+Once the project has been regenerated, click on `Generate Bitstream`. When that is complete, run `File->Export->Export Hardware`. Select `Include bitstream`. This will finally generate a Vivado hardware description file  `ebit_7010_top_wrapper.xsa`.
+
 <h1> Create project using Vivado generated hardware description file (.xsa)</h1>
 
 Set environment variables for Petalinux paths. Make sure to set the Petalinux tools path correctly in this script, for your installation.
@@ -57,7 +68,7 @@ $ cd petalinux_sd
 Specify the exported hardware description file from the Vivado project
 
 ```
-$ petalinux-config  --get-hw-description=/home/nair/fpga/ebit/ebaz4205/vivado/ebit_z7010_top_wrapper.xsa
+$ petalinux-config  --get-hw-description=<full path to>/ebit_z7010_top_wrapper.xsa
 ```
 
 In the pop-up menuconfig dialog :
